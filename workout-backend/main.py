@@ -32,7 +32,11 @@ if not firebase_admin._apps:
 
     if service_account_json:
         # Render 등 클라우드 배포 시 JSON 문자열 환경변수 사용
-        cred_dict = json.loads(service_account_json)
+        try:
+            cred_dict = json.loads(service_account_json)
+        except Exception:
+            # 문자열 파싱 실패 시 이스케이프 문자 보정 후 재시도
+            cred_dict = json.loads(service_account_json.replace('\\n', '\n'))
         cred = credentials.Certificate(cred_dict)
     elif os.path.exists(service_account_path):
         # 로컬 환경 키 파일 사용
