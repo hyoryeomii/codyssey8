@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI 피트니스 비서</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🏋️ AI 피트니스 비서</h1>
+      <p>내 운동 데이터를 이해하는 맞춤형 AI 트레이너</p>
+    </header>
+
+    <div class="main-content">
+      <!-- 왼쪽: 사이드바 (대화 기록 & 데이터 요약) -->
+      <aside class="sidebar">
+        <!-- 요약 카드 -->
+        <section class="card summary-card">
+          <h3>📊 데이터 요약</h3>
+          <div id="summary-content">요약 정보를 불러오는 중...</div>
+        </section>
+
+        <!-- 대화 기록 -->
+        <section class="card history-card">
+          <h3>💬 이전 대화 목록</h3>
+          <ul id="history-list"></ul>
+        </section>
+      </aside>
+
+      <!-- 중앙/우측: 메인 (채팅 & 데이터 관리) -->
+      <main class="content">
+        <!-- AI 채팅 섹션 -->
+        <section class="card chat-card">
+          <h3>🤖 AI 트레이너와 대화</h3>
+          <div id="chat-box" class="chat-box">
+            <div class="message system-message">안녕하세요! 운동 기록에 대해 무엇이든 물어보세요.</div>
+          </div>
+          <div id="loading" class="loading hidden">AI가 답변을 생각하는 중입니다...</div>
+          <form id="chat-form" class="input-group">
+            <input type="text" id="chat-input" placeholder="예: 최근 운동 트렌드는 어때?" required />
+            <button type="submit">전송</button>
+          </form>
+        </section>
+
+        <!-- 데이터 관리(CRUD) 섹션 -->
+        <section class="card data-card">
+          <h3>📝 운동 데이터 관리</h3>
+          <form id="data-form" class="data-form">
+            <input type="hidden" id="data-id" />
+            <input type="date" id="data-date" required />
+            <input type="number" id="data-value" placeholder="운동 시간(분)" required />
+            <input type="text" id="data-memo" placeholder="메모 (예: 런닝머신, 스쿼트)" required />
+            <button type="submit" id="form-submit-btn">데이터 추가</button>
+            <button type="button" id="form-cancel-btn" class="btn-cancel hidden">취소</button>
+          </form>
+
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>날짜</th>
+                <th>시간(분)</th>
+                <th>메모</th>
+                <th>관리</th>
+              </tr>
+            </thead>
+            <tbody id="data-list"></tbody>
+          </table>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
