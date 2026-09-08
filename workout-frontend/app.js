@@ -1,4 +1,4 @@
-const API_BASE_URL = 'http://127.0.0.1:8000'; // 배포 후 Render URL로 교체 예정
+const API_BASE_URL = 'https://workout-backend-szc7.onrender.com'; // 배포 후 Render URL로 교체
 
 document.addEventListener('DOMContentLoaded', () => {
   loadSummary();
