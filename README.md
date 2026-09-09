@@ -97,9 +97,15 @@
 ## 5. 실행 및 배포 주소
 
 - **Frontend 배포 URL**: `https://codyssey8-p1wj3zdon-123-fcce.vercel.app`
+  - 사용자가 직접 접속해서 사용하는 화면
+  - HTML/CSS/JavaScript로 작성된 버튼, 입력창, 채팅 화면 등 표시
+  - 사용자가 입력창에 글을 쓰거나 버튼을 누르면, 프론트엔드가 백엔드 URL로 데이터를 보내 응답을 받아옴
 - **Backend 배포 URL**: `https://workout-backend-szc7.onrender.com`
+  - 데이터베이스 조작, AI 호출 등 실제 로직을 실행하는 서버의 기본 주소
+  - 브라우저 주소창에 기본 주소만 입력하면 화면이 따로 없어 {"detail":"Not Found"}가 뜨는 것이 정상 (/api/data처럼 뒤에 세부 경로를 붙여야 데이터가 출력)
 - **Swagger API Docs**: `https://workout-backend-szc7.onrender.com/docs`
-
+  - 백엔드 서버가 "우리 서버는 이런 기능(API)들을 제공합니다"라고 깔끔하게 보여주는 자동 생성 문서
+  - 개발자나 평가자가 프론트엔드 화면 없이도 백엔드의 각 기능(GET, POST, PUT, DELETE)이 제대로 작동하는지 직접 버튼을 눌러 테스트해 볼 수 있음
 ## 6. 결론 및 자체 평가
 
 - **성과**: 데이터 수집, FastAPI 백엔드 구축, Firestore 연동, Context Injection 기법을 적용한 OpenAI 연동, 클라우드 배포까지 AI 비서 서비스의 전체 파이프라인 구축을 완료했습니다.
